@@ -12,11 +12,12 @@ function singleDigitCheck(singleDigit) {
   else if (singleDigit === "6") {return "VI"}
   else if (singleDigit === "7") {return "VII"}
   else if (singleDigit === "8") {return "VIII"}
-  else {return "IX"}
+  else if (singleDigit === "9") {return "IX"}
+  else {return ""}
 }
 
 function tenDigitCheck(singleDigit) {
-  if (singleDigit === "0") {return "X"}
+  if (singleDigit === "0") {return ""}
   else if (singleDigit === "1") {return "X"}
   else if (singleDigit === "2") {return "XX"}
   else if (singleDigit === "3") {return "XXX"}
@@ -25,7 +26,8 @@ function tenDigitCheck(singleDigit) {
   else if (singleDigit === "6") {return "LX"}
   else if (singleDigit === "7") {return "LXX"}
   else if (singleDigit === "8") {return "LXXX"}
-  else {return "XC"}
+  else if (singleDigit === "9") {return "XC"}
+  else {return ""}
 }
 
 function hundredDigitCheck(singleDigit) {
@@ -38,7 +40,8 @@ function hundredDigitCheck(singleDigit) {
   else if (singleDigit === "6") {return "DC"}
   else if (singleDigit === "7") {return "DCC"}
   else if (singleDigit === "8") {return "DCCC"}
-  else {return "CM"}
+  else if (singleDigit === "9") {return "CM"}
+  else {return ""}
 }
 
 function thousandDigitCheck(singleDigit) {
@@ -51,7 +54,8 @@ function thousandDigitCheck(singleDigit) {
   else if (singleDigit === "6") {return "SM"}
   else if (singleDigit === "7") {return "SMM"}
   else if (singleDigit === "8") {return "SMMM"}
-  else {return "SZ"}  //We have invented a fake roman numeral for 10000.
+  else if (singleDigit === "9") {return "SZ"}
+  else {return ""}  //We have invented a fake roman numeral for 10000.
 }
 
 function convertToRomanNumeral(userArabicNumber) {
@@ -70,12 +74,25 @@ function convertToRomanNumeral(userArabicNumber) {
   return finalRomanString;
 }
 
-$(document).ready(function(){
-  $("#inputForm").submit(function(event){
+function checkNumberRange(userArabicNumber) {
+  if (userArabicNumber > 0 && userArabicNumber < 4000) {
+  return 1;
+  }
+  else {return 0;
+  }
+}
+
+$(document).ready(function() {
+  $("#inputForm").submit(function(event) {
     event.preventDefault();
     var originalNumber = $("input#userInput").val();
-//    console.log(singleDigitCheck(originalNumber));
-    var finalAnswer = convertToRomanNumeral(originalNumber);
-    $("span.userOutput").text(finalAnswer);
+    //console.log(singleDigitCheck(originalNumber));
+    //console.log(checkNumberRange(originalNumber));
+    if (checkNumberRange(originalNumber) === 1) {
+      var finalAnswer = convertToRomanNumeral(originalNumber);
+      $("span.userOutput").text(finalAnswer);
+    } else {
+      $("span.userOutput").text("Invaild Number");
+    }
     });
 });
