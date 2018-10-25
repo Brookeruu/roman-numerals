@@ -1,4 +1,4 @@
-# _Roman Number Coverter_
+# _Roman Number Converter
 
 #### _Turn a number between 0 and 4000 into Roman Numerals, 25 Oct 2018_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-_Write a javascript program that converts a number between 0 and 4000 into it's equalvalent in Roman Numerals:_
+_Write a javascript program that converts a number between 0 and 4000 into it's equivalent in Roman Numerals:_
 
 _1.  Ask the user for a number input._
 
@@ -14,13 +14,15 @@ _2.  Check if the user input is actually a number._
 
 _3.  Check if the number is between 0 and 4000._
 
-_4.  Divide the number's digits into 1000's, 100's, 10's, and 1's placeholder._
+_4.  Turn the number into an array of characters.  The array size is never bigger than 4 elements._
 
-_5.  On each placeholder, convert the arabic numeral into the roman numeral._
+_5.  Reverse the ordering of the elements in the array._
 
-_6.  Create a new string that combines the converted roman numerals._
+_6.  Convert each number element in the array into it's Roman Numeral string equivalent based on it's index.  The index furthest left represents the one's digit, and the index furthest right represents the 1000's digit._
 
-_7.  Show the output back to the user._
+_7.  Concatenate the Roman Numeral 1's, 10's, 100's and 1000's numerals in reverse order as a new string.  This is the final output._
+
+_8.  Show the final output back to the user._
 
 ## Setup/Installation Requirements
 
