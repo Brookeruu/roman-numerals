@@ -36,4 +36,4 @@ _7.  Show the output back to the user._
 _GitHub, Git, HTML, CSS, Bootstrap, Javascript, JQuery_
 
 ### License
-Copyright (c) 2018 **_KH RL_** MIT license.
+Copyright (c) 2018 **_BP RL_** MIT license.
